@@ -1,42 +1,30 @@
 package Easy;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class ValidParentheses {
-
     public static boolean isValid(String s) {
-        boolean result = true;
-        int fromIndex = 0;
-        int toIndex = 0;
+        Stack<Character> stack = new Stack<>();
+        Map<Character, Character> mappings = new HashMap<>();
+        mappings.put(')', '(');
+        mappings.put('}', '{');
+        mappings.put(']', '[');
 
-        List<String> brackets = new ArrayList<>(List.of(s.split("")));
-        String[] pairs = {"()", "{}", "[]"};
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
 
-        if (s.isEmpty() || s.length() % 2 != 0) {
-            result = false;
-        }
+            if (mappings.containsKey(c)) {
+                char topElement = stack.empty() ? '#' : stack.pop();
 
-        for (String pair : pairs) {
-            if (Collections.frequency(brackets, String.valueOf(pair.charAt(0)))
-                    != Collections.frequency(brackets, String.valueOf(pair.charAt(1)))) {
-                result = false;
-                break;
+                if (topElement != mappings.get(c)) {
+                    return false;
+                }
+            } else {
+                stack.push(c);
             }
         }
 
-        while (toIndex - 1 <= brackets.size()) {
-                for (int i = fromIndex; i < brackets.size(); i++) {
-
-                }
-
-
-        }
-
-
-
-        return result;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
@@ -46,7 +34,10 @@ public class ValidParentheses {
         System.out.println(isValid("([{]})")); // false
     }
 }
-// "({[) }]{[)}]{[)}]{[)}"
+
+
+// {}()[]
+// ({[({[[({[]})]]})]}) [({[]})]
 
 
 /*
