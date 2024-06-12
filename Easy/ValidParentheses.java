@@ -1,6 +1,8 @@
 package Easy;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 public class ValidParentheses {
     public static boolean isValid(String s) {
@@ -35,32 +37,4 @@ public class ValidParentheses {
     }
 }
 
-
-// {}()[]
-// ({[({[[({[]})]]})]}) [({[]})]
-
-
-/*
-Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-
-An input string is valid if:
-Открытые скобки должны закрываться скобками того же типа.
-Открытые скобки должны закрываться в правильном порядке.
-Каждой закрывающей скобке соответствует открытая скобка того же типа.
-
-        Example 1:
-        Input: s = "()"
-        Output: true
-
-        Example 2:
-        Input: s = "()[]{}"
-        Output: true
-
-        Example 3:
-        Input: s = "(]"
-        Output: false
-
-        Constraints:
-        1 <= s.length <= 104
-        s consists of parentheses only '()[]{}'.
-        */
+// https://leetcode.com/problems/valid-parentheses

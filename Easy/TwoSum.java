@@ -26,4 +26,4 @@ public class TwoSum {
         System.out.println(Arrays.toString(twoSum(nums, target)));
     }
 }
-// [2,7,11,15], target = 9 -- Output: [0,1]
+// https://leetcode.com/problems/two-sum
