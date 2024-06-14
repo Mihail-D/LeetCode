@@ -14,3 +14,5 @@ public class LengthOfLastWord {
         System.out.println(sol.lengthOfLastWord(s));
     }
 }
+
+// https://leetcode.com/problems/length-of-last-word
