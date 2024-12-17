@@ -1,4 +1,4 @@
-package Easy;
+package easy;
 
 public class DeleteDuplicates {
 
